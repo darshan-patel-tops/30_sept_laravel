@@ -5,4 +5,4 @@
 3) git commit -m "First Commit"
 4) git push
 
-
+this is how you do git commands
