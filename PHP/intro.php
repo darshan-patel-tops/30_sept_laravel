@@ -4,6 +4,8 @@
 
 echo "welcome everyone ";
 echo " Vaibhavi ";
+echo " Yash ";
+echo " Jaimin ";
 echo " ankit ";
 
 
@@ -14,3 +16,5 @@ echo " ankit ";
 
 <h1>hello welcome to your 1st lecture of php</h1>
 hello welcome to your 1st lecture of php
+
+
