@@ -1,66 +1,39 @@
+
+
 <?php
-
-//cookie max 30 days
-//it has limit 4kb
-
-// print_r($_COOKIE);
-
-if(isset($_REQUEST['submit']))
-{
-    setcookie("email",$_REQUEST['email'],time()+3600);
-    setcookie("password",$_REQUEST['password'],time()+3600);
-    setcookie("name",$_REQUEST['name'],time()+3600);
-    setcookie("username",$_REQUEST['username'],time()+3600);
-
-    header("location:login.php");
-    // print_r($_REQUEST);
-
-
-
-}
-// else
-// {
-//     echo "inside else";
-// }
-
-// require('header.php');
-// require('heade.php');
-// require('header.php');
-// require('heade.php');
-// require('header.php');
-
-// require_once('header.php');
-// require_once('header.php');
-// require_once('header.php');
-// require_once('heade.php');
-// require_once('header.php');
-
-
-// include('header.php');
-// include('header.php');
-// include('heade.php');
-// include('header.php');
-// include('header.php');
-
-// include_once('header.php');
-// include_once('header.php');
-// include_once('heade.php');
-// include_once('header.php');
-
-
-
 
 require_once('header.php');
 
-
+if(isset($_REQUEST['submit']))
+{
+    // print_r($_SESSION);
+    // echo "inside if";
+    echo "<pre>";
+    // print_r($_COOKIE);
+    // print_r($_REQUEST);
+    // echo "</pre>";
+    if(( $_REQUEST['data'] == $_COOKIE['email'] || $_REQUEST['data'] == $_COOKIE['username'] || $_REQUEST['data'] == $_COOKIE['name'] ) && $_REQUEST['password'] == $_COOKIE['password'] )
+    {
+        // $_SESSION['user_information'] = array("username"=>$_COOKIE['username'],"email"=>$_COOKIE['email'],"password"=>$_COOKIE['password'],"name"=>$_COOKIE['name']);
+        $_SESSION['user_info'] = $_COOKIE;
+        // print_r($_SESSION);
+        header("location:home.php");
+        // echo "validation done";
+    }
+    else
+    {
+        echo "wrong validation";
+    }
+    
+}
+else 
+{
+    // echo "inside else";
+}
 
 ?>
 
-
-
-
-<!-- Preview only in Full page view -->
-    <section class="darksoul-section">
+<section class="darksoul-section">
         
         <div class="darksoul-left">
           
@@ -76,9 +49,7 @@ require_once('header.php');
                 </div>
                 <div class="darksoul-content" id="Login">
                     <form class="darksoul-form" action="" method="post">
-                        <input class="darksoul-input" required type="email" name="email" placeholder=" Email ID" />
-                        <input class="darksoul-input" required type="name" name="name" placeholder=" Enter your name" />
-                        <input class="darksoul-input" required type="username" name="username" placeholder=" Enter your username" />
+                        <input class="darksoul-input" required type="text" name="data" placeholder="Enter Email/Username" />
                         <input class="darksoul-input" required type="password" name="password" placeholder=" Password" />
                       
                 </div>
@@ -99,7 +70,7 @@ require_once('header.php');
 </div>
             </div>
                 <div class="darksoul-footer" id="footer">
-                    <button class="darksoul-btn" type="submit" name="submit">Register</button>
+                    <button class="darksoul-btn" type="submit" name="submit">Login</button>
                 </div>
                     
                 </form>
@@ -515,9 +486,8 @@ to {transform: scale(0.4) translateX(500px);}
   
     </script>
 
-
 <?php
 
+require_once('footer.php');
 
-require('footer.php');
 ?>
