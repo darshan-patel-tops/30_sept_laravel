@@ -13,6 +13,11 @@ foreach ($arr as $key => $value)
     echo "Key is : $key<br>";
     echo "Value is : $value<br>";
 }
+foreach ($arr as  $value) 
+{
+    // echo "Key is : $key<br>";
+    echo "Value is : $value<br>";
+}
 
 
 
