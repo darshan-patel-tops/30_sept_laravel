@@ -9,7 +9,7 @@
 
 class kaipan
 {
-    function call()
+   public static function call()
     {
         echo "Call<br>";
     }
@@ -18,6 +18,7 @@ class kaipan
 $kuchbhi = new kaipan; 
 // object name = new(keyword) class name
 $kuchbhi->call();
+kaipan::call();
 //object name -> function/variable
 
 
